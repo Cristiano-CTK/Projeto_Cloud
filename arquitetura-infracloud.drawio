@@ -1,0 +1,279 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/28.2.8 Chrome/140.0.7339.240 Electron/38.4.0 Safari/537.36" version="28.2.8">
+  <diagram name="Arquitetura InfraCloud" id="infracloud-arch">
+    <mxGraphModel dx="4591" dy="2701" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1900" pageHeight="1500" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="Y01vXo64o3Y8LnT13ny1-4" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-15" y="-43.44" width="1915" height="1383.44" as="geometry" />
+        </mxCell>
+        <mxCell id="title" value="Arquitetura de Infraestrutura Cloud — E-commerce (Multi-Cloud Azure + OCI)" style="text;html=1;fontSize=22;fontStyle=1;align=center;verticalAlign=middle;fontColor=#1B1B1B;" parent="1" vertex="1">
+          <mxGeometry x="40" y="20" width="1820" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="bandIdent" value="USUÁRIOS, IDENTIDADE &amp; PRODUTIVIDADE  (Microsoft 365 + Microsoft Entra)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FAFAFA;strokeColor=#9E9E9E;dashed=1;verticalAlign=top;fontStyle=1;fontSize=13;align=left;spacingLeft=10;spacingTop=6;fontColor=#555555;" parent="1" vertex="1">
+          <mxGeometry x="40" y="80" width="1820" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="custUsers" value="Clientes&lt;br&gt;(Acesso via Internet)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#455A64;strokeColor=#263238;fontColor=#FFFFFF;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="70" y="120" width="180" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="corpUsers" value="Usuários Corporativos&#xa;(Funcionários)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#455A64;strokeColor=#263238;fontColor=#FFFFFF;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="290" y="120" width="180" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="entra" value="Microsoft Entra ID&#xa;(SSO, MFA, Conditional Access,&#xa;Identidade central / Zero Trust)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0F6CBD;strokeColor=#0A4C87;fontColor=#FFFFFF;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="1180" y="115" width="250" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="m365" value="Microsoft 365&#xa;(Teams, Exchange, SharePoint, OneDrive)&#xa;+ Entra Private Access / GSA (publicação segura)&#xa;+ Microsoft Purview (DLP/Compliance)&#xa;+ Defender for Office 365" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D83B01;strokeColor=#A12C00;fontColor=#FFFFFF;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="1470" y="110" width="360" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="bandEdge" value="CAMADA GLOBAL / EDGE&amp;nbsp; &amp;nbsp; &amp;nbsp; — Entrada Segura e Distribuição de Tráfego" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FAFAFA;strokeColor=#9E9E9E;dashed=1;verticalAlign=top;fontStyle=1;fontSize=13;align=left;spacingLeft=10;spacingTop=6;fontColor=#555555;" parent="1" vertex="1">
+          <mxGeometry x="40" y="230" width="1240" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="frontdoor" value="Azure Front Door (Premium)&#xa;+ WAF + DDoS Protection + CDN&#xa;Roteamento global / failover entre regiões" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0078D4;strokeColor=#005A9E;fontColor=#FFFFFF;fontSize=12;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="80" y="265" width="340" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="dns" value="Azure DNS&#xa;(zona pública + privada)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0078D4;strokeColor=#005A9E;fontColor=#FFFFFF;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="470" y="265" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="defenderEdge" value="DDoS Protection Standard" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D13438;strokeColor=#9B2528;fontColor=#FFFFFF;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="720" y="265" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="azureCloud" value="MICROSOFT AZURE — Nuvem&amp;nbsp; &amp;nbsp;Principal (~80% das cargas)  |  Topologia Hub-Spoke via Azure Virtual WAN  |  Azure Landing Zones" style="rounded=10;whiteSpace=wrap;html=1;fillColor=#E6F2FB;strokeColor=#0078D4;verticalAlign=top;fontStyle=1;fontSize=13;align=left;spacingLeft=12;spacingTop=8;fontColor=#005A9E;" parent="1" vertex="1">
+          <mxGeometry x="40" y="370" width="1240" height="520" as="geometry" />
+        </mxCell>
+        <mxCell id="hub" value="HUB VNet (Conectividade Central / Virtual WAN)" style="rounded=8;whiteSpace=wrap;html=1;fillColor=#DEECF9;strokeColor=#2B88D8;verticalAlign=top;fontStyle=1;fontSize=12;align=center;spacingTop=6;fontColor=#005A9E;" parent="1" vertex="1">
+          <mxGeometry x="70" y="410" width="1180" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="fw" value="Azure Firewall&#xa;Premium (IDPS)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D13438;strokeColor=#9B2528;fontColor=#FFFFFF;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="90" y="445" width="150" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="erGw" value="ExpressRoute&#xa;Gateway" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0078D4;strokeColor=#005A9E;fontColor=#FFFFFF;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="260" y="445" width="140" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="vpnGw" value="VPN Gateway&#xa;(S2S backup)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0078D4;strokeColor=#005A9E;fontColor=#FFFFFF;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="420" y="445" width="140" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="bastion" value="Azure Bastion&#xa;(acesso admin)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0078D4;strokeColor=#005A9E;fontColor=#FFFFFF;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="580" y="445" width="140" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="privDns" value="Private DNS&#xa;Resolver" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0078D4;strokeColor=#005A9E;fontColor=#FFFFFF;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="737" y="445" width="130" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="acr" value="Azure Container&#xa;Registry (ACR)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0078D4;strokeColor=#005A9E;fontColor=#FFFFFF;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="890" y="445" width="150" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="apim" value="API Management&#xa;(gateway de APIs)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0078D4;strokeColor=#005A9E;fontColor=#FFFFFF;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="1060" y="445" width="170" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="regBR" value="REGIÃO PRIMÁRIA&amp;nbsp; &amp;nbsp; —&amp;nbsp; &amp;nbsp;Brazil South (3 Zonas de Disponibilidade)" style="rounded=8;whiteSpace=wrap;html=1;fillColor=#F0F8FF;strokeColor=#50A0DC;verticalAlign=top;fontStyle=1;fontSize=12;align=left;spacingLeft=10;spacingTop=6;fontColor=#005A9E;" parent="1" vertex="1">
+          <mxGeometry x="70" y="520" width="600" height="350" as="geometry" />
+        </mxCell>
+        <mxCell id="appSpokeBR" value="Spoke — Aplicação" style="rounded=6;whiteSpace=wrap;html=1;fillColor=#EAF4FB;strokeColor=#2B88D8;verticalAlign=top;fontStyle=1;fontSize=11;align=left;spacingLeft=8;spacingTop=4;fontColor=#005A9E;" parent="1" vertex="1">
+          <mxGeometry x="90" y="560" width="270" height="290" as="geometry" />
+        </mxCell>
+        <mxCell id="agwBR" value="Application Gateway + WAF v2&#xa;(zone-redundant)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0078D4;strokeColor=#005A9E;fontColor=#FFFFFF;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="105" y="590" width="240" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="aksBR" value="AKS — Azure Kubernetes Service&#xa;Frontend Web + Backend APIs&#xa;+ Serviços auxiliares (containers)&#xa;Multi-AZ + Cluster Autoscaler / HPA" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#326CE5;strokeColor=#1E4D9E;fontColor=#FFFFFF;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="105" y="650" width="240" height="95" as="geometry" />
+        </mxCell>
+        <mxCell id="caBR" value="Container Apps / VMSS&#xa;(workloads event-driven, auto-scale)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0078D4;strokeColor=#005A9E;fontColor=#FFFFFF;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="105" y="760" width="240" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="kvBR" value="Azure Key Vault (segredos/chaves/certs)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D13438;strokeColor=#9B2528;fontColor=#FFFFFF;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="105" y="813" width="240" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="dataSpokeBR" value="Spoke — Dados (acesso via Private Endpoint)" style="rounded=6;whiteSpace=wrap;html=1;fillColor=#F3EFFB;strokeColor=#7B68EE;verticalAlign=top;fontStyle=1;fontSize=11;align=left;spacingLeft=8;spacingTop=4;fontColor=#4B3F9E;" parent="1" vertex="1">
+          <mxGeometry x="380" y="560" width="270" height="290" as="geometry" />
+        </mxCell>
+        <mxCell id="cosmosBR" value="Azure Cosmos DB&#xa;for MongoDB (vCore)&#xa;— MIGRAÇÃO dos DBs CRÍTICOS&#xa;(não críticos: avaliar em fase 2)&#xa;Multi-AZ, backup contínuo, PITR" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#7B68EE;strokeColor=#4B3F9E;fontColor=#FFFFFF;fontSize=11;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="395" y="590" width="240" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="cacheBR" value="Azure Cache for Redis&#xa;(sessão / performance)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#7B68EE;strokeColor=#4B3F9E;fontColor=#FFFFFF;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="395" y="695" width="240" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="storBR" value="Storage / Blob (catálogo, mídias)&#xa;+ Private Endpoint" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#7B68EE;strokeColor=#4B3F9E;fontColor=#FFFFFF;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="395" y="755" width="240" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="peBR" value="Private Endpoints + NSGs por subnet" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#5C2D91;strokeColor=#3B1D5E;fontColor=#FFFFFF;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="395" y="813" width="240" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="regDR" value="REGIÃO SECUNDÁRIA — DR / Alta Disponibilidade entre regiões  (ex.: Brazil Southeast)" style="rounded=8;whiteSpace=wrap;html=1;fillColor=#F0F8FF;strokeColor=#50A0DC;verticalAlign=top;fontStyle=1;fontSize=12;align=left;spacingLeft=10;spacingTop=6;fontColor=#005A9E;dashed=1;" parent="1" vertex="1">
+          <mxGeometry x="690" y="520" width="560" height="350" as="geometry" />
+        </mxCell>
+        <mxCell id="agwDR" value="App Gateway + WAF v2" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0078D4;strokeColor=#005A9E;fontColor=#FFFFFF;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="710" y="585" width="250" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="aksDR" value="AKS (réplica)&#xa;Frontend + APIs + Containers&#xa;Escala mínima (warm standby) / escala sob demanda" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#326CE5;strokeColor=#1E4D9E;fontColor=#FFFFFF;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="710" y="635" width="250" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="cosmosDR" value="Cosmos DB for MongoDB&#xa;Réplica geo (read region)&#xa;Failover automático" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#7B68EE;strokeColor=#4B3F9E;fontColor=#FFFFFF;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="985" y="585" width="245" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="asrDR" value="Azure Site Recovery + Backup&#xa;(replicação de VMs/estado)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0078D4;strokeColor=#005A9E;fontColor=#FFFFFF;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="985" y="680" width="245" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="drNote" value="Estratégia DR: Active/Warm-Standby&#xa;RTO/RPO baixos · Front Door faz failover automático&#xa;Dados replicados geograficamente (Cosmos geo-replication)" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=top;fontSize=11;fontColor=#005A9E;spacingLeft=6;" parent="1" vertex="1">
+          <mxGeometry x="710" y="745" width="520" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="onprem" value="" style="rounded=10;whiteSpace=wrap;html=1;fillColor=#F0F0F0;strokeColor=#7F7F7F;verticalAlign=top;fontStyle=1;fontSize=13;align=left;spacingLeft=12;spacingTop=8;fontColor=#444444;" parent="1" vertex="1">
+          <mxGeometry x="40" y="920" width="600" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="ad" value="Active Directory (AD DS)&#xa;sincronizado com Entra ID&#xa;via Entra Connect (hybrid identity)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#616161;strokeColor=#424242;fontColor=#FFFFFF;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="70" y="965" width="260" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="fileSrv" value="File Servers&#xa;(migração futura → Azure Files /&#xa;Azure File Sync)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#616161;strokeColor=#424242;fontColor=#FFFFFF;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="350" y="965" width="260" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="internalSys" value="Sistemas internos&#xa;(integração com apps no Azure via rede privada ExpressRoute)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#616161;strokeColor=#424242;fontColor=#FFFFFF;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="70" y="1050" width="540" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="erCircuit" value="ExpressRoute + VPN Site-to-Site (ativo/ativo, IPSec) + SD-WAN — conexão privada e cifrada ponta a ponta com o Hub" style="text;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;fontSize=11;fontStyle=2;fontColor=#444444;" parent="1" vertex="1">
+          <mxGeometry x="70" y="1112" width="540" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="oci" value="ORACLE CLOUD INFRASTRUCTURE (OCI) — Multi-Cloud (futuro)" style="rounded=10;whiteSpace=wrap;html=1;fillColor=#FDECEA;strokeColor=#C74634;verticalAlign=top;fontStyle=1;fontSize=13;align=left;spacingLeft=12;spacingTop=8;fontColor=#C74634;" parent="1" vertex="1">
+          <mxGeometry x="680" y="920" width="600" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="ociVcn" value="OCI VCN&#xa;Cargas selecionadas (split-stack)&#xa;ex.: Data Lake consumido via OCI&#xa;com custo menor&#xa;Balanceamento Azure×OCI / contingência" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#C74634;strokeColor=#8F2F22;fontColor=#FFFFFF;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="710" y="965" width="260" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="ociSso" value="SSO federado OCI ↔ Entra ID&#xa;(identidade unificada)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#C74634;strokeColor=#8F2F22;fontColor=#FFFFFF;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="990" y="965" width="270" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="ociInter" value="Oracle Interconnect for Azure — ExpressRoute (Azure) + FastConnect (OCI)&#xa;Conexão privada, baixa latência (~2 ms), sem taxa de transferência" style="text;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;fontSize=11;fontStyle=2;fontColor=#C74634;" parent="1" vertex="1">
+          <mxGeometry x="710" y="1055" width="550" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="platband" value="PLATAFORMA TRANSVERSAL — aplica-se a TODAS as nuvens e ambientes" style="rounded=10;whiteSpace=wrap;html=1;fillColor=#EFF7EE;strokeColor=#3C8C40;verticalAlign=top;fontStyle=1;fontSize=13;align=left;spacingLeft=12;spacingTop=8;fontColor=#2E6B31;" parent="1" vertex="1">
+          <mxGeometry x="1300" y="370" width="560" height="790" as="geometry" />
+        </mxCell>
+        <mxCell id="govBox" value="GOVERNANÇA&#xa;• Management Groups + Subscriptions&#xa;• Azure Landing Zones&#xa;• Azure Policy (compliance/guardrails)&#xa;• RBAC + PIM (acesso mínimo / JIT)&#xa;• Padrão de Tags + Blueprints&#xa;• IaC: Terraform (pronto p/ multi-cloud)" style="rounded=6;whiteSpace=wrap;html=1;fillColor=#E3F0E3;strokeColor=#3C8C40;fontColor=#1B4D1F;fontSize=11;align=left;spacingLeft=10;verticalAlign=top;spacingTop=8;fontStyle=0;" parent="1" vertex="1">
+          <mxGeometry x="1320" y="415" width="520" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="secBox" value="SEGURANÇA&#xa;• Microsoft Defender for Cloud (CSPM/CWP)&#xa;• Microsoft Sentinel (SIEM/SOAR)&#xa;• Entra ID: MFA, Conditional Access, Zero Trust&#xa;• Key Vault (segredos/chaves) + criptografia&#xa;• Azure Firewall Premium + WAF + DDoS&#xa;• NSGs, Private Endpoints, sem IP público em VMs" style="rounded=6;whiteSpace=wrap;html=1;fillColor=#FBE9E9;strokeColor=#D13438;fontColor=#7A1416;fontSize=11;align=left;spacingLeft=10;verticalAlign=top;spacingTop=8;" parent="1" vertex="1">
+          <mxGeometry x="1320" y="545" width="520" height="125" as="geometry" />
+        </mxCell>
+        <mxCell id="obsBox" value="OBSERVABILIDADE&#xa;• Azure Monitor + Log Analytics (workspace central)&#xa;• Application Insights (APM / tracing distribuído)&#xa;• Azure Managed Grafana + Managed Prometheus&#xa;• Alertas, dashboards e Health/SLA&#xa;• Coleta unificada Azure + OCI + On-prem" style="rounded=6;whiteSpace=wrap;html=1;fillColor=#E7F1FB;strokeColor=#0078D4;fontColor=#0A3D6E;fontSize=11;align=left;spacingLeft=10;verticalAlign=top;spacingTop=8;" parent="1" vertex="1">
+          <mxGeometry x="1320" y="680" width="520" height="115" as="geometry" />
+        </mxCell>
+        <mxCell id="costBox" value="GESTÃO DE CUSTOS&#xa;• Azure Cost Management + Billing&#xa;• Budgets, alertas e anomalias&#xa;• Reservations + Savings Plans (estáveis)&#xa;• VMSS / autoscale (cargas elásticas)&#xa;• Right-sizing via Azure Advisor&#xa;• FinOps + Comitê de Custos (fatura → API → CFM)" style="rounded=6;whiteSpace=wrap;html=1;fillColor=#FFF4E5;strokeColor=#D9822B;fontColor=#7A4A12;fontSize=11;align=left;spacingLeft=10;verticalAlign=top;spacingTop=8;" parent="1" vertex="1">
+          <mxGeometry x="1320" y="805" width="520" height="125" as="geometry" />
+        </mxCell>
+        <mxCell id="bcdrBox" value="RESILIÊNCIA / BCDR&#xa;• Multi-região + Zonas de Disponibilidade&#xa;• Front Door (failover global automático)&#xa;• Autoscaling (AKS/HPA, VMSS, Container Apps)&#xa;• Azure Backup + Site Recovery&#xa;• Geo-replicação de dados (Cosmos)&#xa;• Testes de DR / Chaos / runbooks" style="rounded=6;whiteSpace=wrap;html=1;fillColor=#EDEAF8;strokeColor=#7B68EE;fontColor=#3B2E7A;fontSize=11;align=left;spacingLeft=10;verticalAlign=top;spacingTop=8;" parent="1" vertex="1">
+          <mxGeometry x="1320" y="940" width="520" height="125" as="geometry" />
+        </mxCell>
+        <mxCell id="reqMap" value="✓ Requisitos atendidos: 1) Rede (Hub-Spoke/vWAN) · 2) Resiliência (multi-região+AZ) · 3) Segurança (Defender/Entra/Firewall) · 4) Observabilidade (Monitor/Grafana) · 5) Banco de dados (Cosmos for MongoDB) · 6) Governança (Landing Zones/Policy) · 7) Multi-Cloud (OCI Interconnect) · 8) Custos (FinOps/Reservations) · 9) Microsoft 365 (Entra/Purview)" style="rounded=6;whiteSpace=wrap;html=1;fillColor=#E3F0E3;strokeColor=#3C8C40;fontColor=#1B4D1F;fontSize=11;align=left;spacingLeft=10;verticalAlign=middle;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="1320" y="1075" width="520" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#455A64;strokeWidth=2;endArrow=block;" parent="1" source="custUsers" target="frontdoor" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="160" y="228" />
+              <mxPoint x="230" y="228" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#0F6CBD;strokeWidth=2;endArrow=block;dashed=1;" parent="1" source="corpUsers" target="entra" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#0F6CBD;strokeWidth=2;startArrow=block;endArrow=block;" parent="1" source="entra" target="m365" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" value="HTTPS" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#0078D4;strokeWidth=2;endArrow=block;fontSize=10;" parent="1" source="frontdoor" target="agwBR" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" value="failover" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#0078D4;strokeWidth=2;endArrow=block;dashed=1;fontSize=10;" parent="1" source="frontdoor" target="agwDR" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="835" y="310" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e6" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#326CE5;strokeWidth=2;endArrow=block;" parent="1" source="agwBR" target="aksBR" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" value="Private Endpoint" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#7B68EE;strokeWidth=2;endArrow=block;fontSize=10;" parent="1" source="aksBR" target="cosmosBR" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" value="geo-replicação" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#7B68EE;strokeWidth=2;endArrow=block;dashed=1;fontSize=10;" parent="1" source="cosmosBR" target="cosmosDR" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e9" value="Entra Connect (sync)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#0F6CBD;strokeWidth=2;endArrow=block;dashed=1;fontSize=10;" parent="1" source="ad" target="entra" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="200" y="1040" />
+              <mxPoint x="1305" y="1040" />
+            </Array>
+          </mxGeometry>
+          <Array as="points">
+            <mxPoint x="200" y="700" />
+          </Array>
+        </mxCell>
+        <mxCell id="e10" value="ExpressRoute + VPN S2S (ativo/ativo, IPSec)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#616161;strokeWidth=3;endArrow=block;startArrow=block;fontSize=10;" parent="1" source="internalSys" target="erGw" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e11" value="Interconnect (ER+FastConnect)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#C74634;strokeWidth=3;endArrow=block;startArrow=block;fontSize=10;" parent="1" source="ociVcn" target="erGw" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="330" y="980" />
+            </Array>
+          </mxGeometry>
+          <Array as="points">
+            <mxPoint x="330" y="900" />
+          </Array>
+        </mxCell>
+        <mxCell id="e12" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#C74634;strokeWidth=2;endArrow=block;dashed=1;" parent="1" source="ociSso" target="entra" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e13" value="APIs internas" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#0078D4;strokeWidth=2;endArrow=block;fontSize=10;" parent="1" edge="1">
+          <mxGeometry x="0.011" y="-2" relative="1" as="geometry">
+            <mxPoint x="345" y="707.5238095238096" as="sourcePoint" />
+            <mxPoint x="1145" y="500" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1210" y="708" />
+              <mxPoint x="1210" y="500" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="legend" value="LEGENDA" style="rounded=6;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#9E9E9E;verticalAlign=top;fontStyle=1;fontSize=11;align=left;spacingLeft=8;spacingTop=4;" parent="1" vertex="1">
+          <mxGeometry x="40" y="1180" width="1240" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="lg1" value="Azure (rede/compute)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0078D4;fontColor=#FFFFFF;fontSize=10;" parent="1" vertex="1">
+          <mxGeometry x="60" y="1215" width="160" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="lg2" value="Dados" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#7B68EE;fontColor=#FFFFFF;fontSize=10;" parent="1" vertex="1">
+          <mxGeometry x="235" y="1215" width="120" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="lg3" value="Segurança" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D13438;fontColor=#FFFFFF;fontSize=10;" parent="1" vertex="1">
+          <mxGeometry x="370" y="1215" width="120" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="lg4" value="Identidade" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0F6CBD;fontColor=#FFFFFF;fontSize=10;" parent="1" vertex="1">
+          <mxGeometry x="505" y="1215" width="120" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="lg5" value="On-premises" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#616161;fontColor=#FFFFFF;fontSize=10;" parent="1" vertex="1">
+          <mxGeometry x="640" y="1215" width="120" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="lg6" value="OCI / Multi-cloud" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#C74634;fontColor=#FFFFFF;fontSize=10;" parent="1" vertex="1">
+          <mxGeometry x="775" y="1215" width="140" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="lg7" value="Governança/Plataforma" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#3C8C40;fontColor=#FFFFFF;fontSize=10;" parent="1" vertex="1">
+          <mxGeometry x="930" y="1215" width="170" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="lg8" value="Kubernetes (AKS)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#326CE5;fontColor=#FFFFFF;fontSize=10;" parent="1" vertex="1">
+          <mxGeometry x="1115" y="1215" width="145" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="lgNote" value="Linhas tracejadas = identidade/replicação/failover · Linhas grossas = conexões privadas (ExpressRoute / FastConnect)" style="text;html=1;whiteSpace=wrap;align=left;fontSize=10;fontColor=#555555;" parent="1" vertex="1">
+          <mxGeometry x="60" y="1255" width="1200" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Y01vXo64o3Y8LnT13ny1-1" value="&lt;span style=&quot;color: rgb(68, 68, 68); font-size: 13px; font-weight: 700; text-align: left;&quot;&gt;AMBIENTE ON-PREMISES (legado, Dev&lt;/span&gt;&lt;span style=&quot;color: light-dark(rgb(68, 68, 68), rgb(179, 179, 179)); font-size: 13px; font-weight: 700; text-align: left; background-color: transparent;&quot;&gt;)&lt;/span&gt;" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="69" y="924" width="200" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Y01vXo64o3Y8LnT13ny1-2" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=data:image/png,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;" vertex="1" parent="1">
+          <mxGeometry x="40" y="16.560000000000002" width="139" height="42.44" as="geometry" />
+        </mxCell>
+        <mxCell id="Y01vXo64o3Y8LnT13ny1-3" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=data:image/png,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;" vertex="1" parent="1">
+          <mxGeometry x="1718" y="17.56" width="139" height="42.44" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
