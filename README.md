@@ -59,4 +59,4 @@ As recomendações priorizam ações de **curto e médio prazo**, deixando indic
 
 ## Autor
 
-*(Cristiano Pureza · Analista Senior InfraEstrutura Cloud/On-Premises · (51)99774-5197/https://linkedin.com/in/cristianopureza)*
+*(Cristiano Pureza · Analista Senior InfraEstrutura Cloud/On-Premises · (51)99774-5197 / https://linkedin.com/in/cristianopureza)*
